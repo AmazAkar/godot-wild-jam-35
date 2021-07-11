@@ -10,8 +10,7 @@ extents = Vector2( 510.93, 10 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 477.348, 198.982 )
-mass = 2.0
-move_force = Vector2( 100, 0 )
+move_force = Vector2( 200, 0 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
