@@ -10,10 +10,10 @@ const torque_force = 3500
 
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("move-left") and self.applied_force.x > -max_force:
+	if Input.is_action_pressed("move-left") and self.linear_velocity.x > -max_force:
 		self.linear_velocity.x -= vel_force
 		#self.add_central_force(Vector2(-move_force.x,0))
-	if Input.is_action_just_pressed("move-right") and self.applied_force.x < max_force:
+	if Input.is_action_pressed("move-right") and self.linear_velocity.x < max_force:
 		self.linear_velocity.x += vel_force
 		#self.add_force(force_position, move_force)
 
