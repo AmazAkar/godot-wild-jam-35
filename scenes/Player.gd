@@ -7,13 +7,13 @@ export(Vector2) var force_position = Vector2(0,0)
 var max_force = 50
 const vel_force = 50
 const torque_force = 2000
+const RL = 5
 
 onready var AP = $AnimationPlayer
 onready var sprite = $Player
 onready var wheel = $Wheel
 
 func _ready():
-	AP.play("cycle")
 	if get_tree().get_current_scene().get_name() == "Level3":
 		print("oh yeah")
 
@@ -26,6 +26,10 @@ func _physics_process(delta):
 		self.linear_velocity.x += vel_force
 		sprite.flip_h = false
 		#self.add_force(force_position, move_force)
+	if Input.is_action_pressed("move-right") or Input.is_action_pressed("move-left"):
+		AP.play("cycle")
+	else: 
+		AP.stop()
 
 	if Input.is_action_just_pressed("balance-left"):
 		self.apply_torque_impulse(-torque_force)
