@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wheelspr.png-66a91cd17e230a73d889a2fb3cbd7acc.stex"
+path="res://.import/temp.png-201e6e8271ac4243360d04fb5ad56331.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wheelspr.png"
-dest_files=[ "res://.import/wheelspr.png-66a91cd17e230a73d889a2fb3cbd7acc.stex" ]
+source_file="res://temp.png"
+dest_files=[ "res://.import/temp.png-201e6e8271ac4243360d04fb5ad56331.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
