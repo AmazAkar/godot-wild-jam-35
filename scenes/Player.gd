@@ -11,11 +11,13 @@ const torque_force = 2000
 onready var AP = $AnimationPlayer
 onready var sprite = $Player
 onready var wheel = $Wheel
+onready var camera = $Camera2D
 
 func _ready():
 	AP.play("cycle")
 	if get_tree().get_current_scene().get_name() == "Level3":
-		print("oh yeah")
+		set_physics_process(false)
+		remove_child(camera)
 
 func _physics_process(delta):
 	if Input.is_action_pressed("move-left") and self.linear_velocity.x > -max_force:
