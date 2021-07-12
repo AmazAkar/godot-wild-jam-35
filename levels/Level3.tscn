@@ -23,7 +23,7 @@ script = ExtResource( 3 )
 scrolling_speed = 300.0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 256, 0 )
+motion_mirroring = Vector2( 252, 0 )
 
 [node name="Traintrack1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 128, 125 )
