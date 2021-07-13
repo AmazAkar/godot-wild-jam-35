@@ -68,3 +68,5 @@ smoothing_enabled = true
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Tween" type="Tween" parent="."]
