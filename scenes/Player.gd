@@ -31,7 +31,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move-right") or Input.is_action_pressed("move-left"):
 		AP.play("cycle")
 	else: 
-		AP.stop()
+		AP.stop()	
 
 	if Input.is_action_just_pressed("balance-left"):
 		self.apply_torque_impulse(-torque_force)
@@ -41,3 +41,11 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("ui_accept"):
 		print(self.applied_force)
+
+
+func _on_Timer_timeout():
+	self.apply_torque_impulse(-torque_force)
+
+
+
+	
