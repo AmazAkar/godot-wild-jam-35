@@ -15,15 +15,20 @@ extents = Vector2( 128.216, 1.94403 )
 position = Vector2( 126.866, 129.308 )
 shape = SubResource( 1 )
 
+[node name="Track2" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 128, 85.718 )
+shape = SubResource( 1 )
+disabled = true
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10.3284, 117.336 )
+position = Vector2( 10, 110.943 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource( 3 )
 scrolling_speed = 300.0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 256, 0 )
+motion_mirroring = Vector2( 252, 0 )
 
 [node name="Traintrack1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 128, 125 )
