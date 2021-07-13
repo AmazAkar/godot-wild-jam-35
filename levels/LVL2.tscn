@@ -43,7 +43,7 @@ texture = ExtResource( 2 )
 position = Vector2( 9.74783, -19.955 )
 
 [node name="core mtr" type="Sprite" parent="."]
-position = Vector2( 0.840881, -0.280304 )
+position = Vector2( -59.1432, 105.953 )
 texture = ExtResource( 3 )
 hframes = 5
 vframes = 5
