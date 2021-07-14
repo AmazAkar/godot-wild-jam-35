@@ -32,37 +32,7 @@ func _ready():
 	if get_tree().get_current_scene().get_name() == "Level3":
 		set_physics_process(false)
 		remove_child(camera)
-
-func _physics_process(delta):
-	if Input.is_action_pressed("move-left") and self.linear_velocity.x > -max_force:
-		self.linear_velocity.x -= vel_force
-		sprite.flip_h = true
-		#self.add_central_force(Vector2(-move_force.x,0))
-	if Input.is_action_pressed("move-right") and self.linear_velocity.x < max_force:
-		self.linear_velocity.x += vel_force
-		sprite.flip_h = false
-		#self.add_force(force_position, move_force)
-	if Input.is_action_pressed("move-right") or Input.is_action_pressed("move-left"):
-		AP.play("cycle")
-	else: 
-		AP.stop()
-
-	if Input.is_action_just_pressed("balance-left"):
-		self.apply_torque_impulse(-torque_force)
-
-	if Input.is_action_just_pressed("balance-right"):
-		self.apply_torque_impulse(torque_force)
-
-	if Input.is_action_just_pressed("ui_accept"):
-		print(self.applied_force)
-
-		remove_child(camera)
-		level3 = true
-		track = track1
-		col_track2 = get_node("/root/Level3/Ground/Track2")
 		
-
-
 func _physics_process(delta):
 	if !level3:
 		if Input.is_action_pressed("move-left") and self.linear_velocity.x > -max_force:
@@ -80,8 +50,10 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("balance-right"):
 			self.apply_torque_impulse(torque_force)
 
-		if Input.is_action_just_pressed("ui_accept"):
-			print(self.applied_force)
+		if Input.is_action_pressed("move-right") or Input.is_action_pressed("move-left"):
+			AP.play("cycle")
+		else: 
+			AP.stop()
 	else:
 		if Input.is_action_just_pressed("track-up") and track == track1:
 			self.apply_central_impulse(Vector2(0,-385))
