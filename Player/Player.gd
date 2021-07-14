@@ -7,6 +7,8 @@ export(Vector2) var force_position = Vector2(0,0)
 var max_force = 50
 const vel_force = 50
 const torque_force = 2000
+const torque_force2 = 10000
+
 const RL = 5
 
 var level3 = false;
@@ -44,11 +46,21 @@ func _physics_process(delta):
 			sprite.flip_h = false
 			#self.add_force(force_position, move_force)
 
-		if Input.is_action_just_pressed("balance-left"):
-			self.apply_torque_impulse(-torque_force)
+		if get_tree().get_current_scene().get_name() != "Level2":
+			if Input.is_action_just_pressed("balance-left"):
+				self.apply_torque_impulse(-torque_force)
 
-		if Input.is_action_just_pressed("balance-right"):
-			self.apply_torque_impulse(torque_force)
+		if get_tree().get_current_scene().get_name() != "Level2":
+			if Input.is_action_just_pressed("balance-right"):
+				self.apply_torque_impulse(torque_force)
+
+		if get_tree().get_current_scene().get_name() == "Level2":
+			if Input.is_action_just_pressed("balance-left"):
+				self.apply_torque_impulse(-torque_force2)
+
+		if get_tree().get_current_scene().get_name() == "Level2":
+			if Input.is_action_just_pressed("balance-right"):
+				self.apply_torque_impulse(torque_force2)
 
 		if Input.is_action_pressed("move-right") or Input.is_action_pressed("move-left"):
 			AP.play("cycle")
