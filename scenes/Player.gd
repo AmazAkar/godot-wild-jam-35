@@ -67,3 +67,8 @@ func _physics_process(delta):
 			yield(get_tree().create_timer(1),"timeout")
 			track = track1
 
+
+func _on_Timer_timeout():
+	self.apply_torque_impulse(-torque_force)
+
+
