@@ -100,5 +100,3 @@ func _on_Timer_timeout():
 	self.apply_torque_impulse(-torque_force)
 
 
-
-	
