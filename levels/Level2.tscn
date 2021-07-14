@@ -42,26 +42,26 @@ texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 9.74783, -19.955 )
-move_force = null
-force_position = null
 
-[node name="wind" type="Sprite" parent="."]
-position = Vector2( 38.4059, -93.4514 )
+[node name="wind" type="Sprite" parent="Player"]
+position = Vector2( 28.6581, -73.4964 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 hframes = 2
 frame = 1
 script = ExtResource( 4 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="wind"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/wind"]
 anims/coremtr = SubResource( 2 )
 
 [node name="Timer(Phys)" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 30.0
 autostart = true
 
 [node name="Timer(Wnd)" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 28.0
 autostart = true
 
+[connection signal="timeout" from="Timer(Phys)" to="Player/wind" method="_on_TimerPhys_timeout"]
 [connection signal="timeout" from="Timer(Phys)" to="Player" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer(Wnd)" to="wind" method="_on_TimerWnd_timeout"]
+[connection signal="timeout" from="Timer(Wnd)" to="Player/wind" method="_on_TimerWnd_timeout"]
