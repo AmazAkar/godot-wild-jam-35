@@ -5,7 +5,6 @@
 [ext_resource path="res://Player/wheelspr.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Scripts/Wheel.gd" type="Script" id=4]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.65724
 height = 0.0
