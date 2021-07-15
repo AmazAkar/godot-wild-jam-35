@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/traintracks.png-6105a0e2899ae2c1f2daead1852c2362.stex"
+path="res://.import/train.png-6ea5f4d288fe3c7f696345c43fd6a9c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World_Elements/traintracks.png"
-dest_files=[ "res://.import/traintracks.png-6105a0e2899ae2c1f2daead1852c2362.stex" ]
+source_file="res://World_Elements/train.png"
+dest_files=[ "res://.import/train.png-6ea5f4d288fe3c7f696345c43fd6a9c9.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
