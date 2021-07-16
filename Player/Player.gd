@@ -37,7 +37,12 @@ func _ready():
 		camera.limit_top = 0
 		level = level3
 		track = track1
-		col_track2 = get_node("/root/Level3/Ground/Track2")
+		col_track2 = get_node("/root/Level3/Track2/Track_Col")
+		self.connect("body_entered",self,"collisionIn3")
+		contact_monitor = true
+		contacts_reported = 4
+		col_track2.disabled = true
+
 
 	elif get_tree().get_current_scene().get_name() == "Level2":
 		level = level2
@@ -78,7 +83,7 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("track-down") and track == track2:	
 				col_track2.disabled = true
 				self.apply_central_impulse(Vector2(0,40))
-				track = track1
+
 			if Input.is_action_just_pressed("balance-left"):
 					self.apply_torque_impulse(-torque_force)
 
@@ -93,3 +98,7 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		col_track2.set_deferred("disabled",false)
 		track = track2
+		
+func collisionIn3(body):
+	if body.name == "Track1":
+		track = track1
